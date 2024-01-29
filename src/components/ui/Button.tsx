@@ -55,12 +55,12 @@ const TYPE_VARIANTS: Record<string, VariantStyle> = {
     },
   },
   secondary: {
-    border: `1px solid ${colors.primary}`,
-    backgroundColor: 'transparent',
-    color: colors.primary,
+    border: `1px solid ${colors.gray3}`,
+    backgroundColor: colors.gray3,
+    color: colors.white,
     hover: {
-      backgroundColor: colors.primary,
-      color: colors.white,
+      border: `1px solid ${colors.gray2}`,
+      backgroundColor: colors.gray2,
     },
   },
   textOnly: {
@@ -95,7 +95,9 @@ const StyledButton = styled.button<ButtonInterface>`
   border-radius: 4px;
   transition: all 0.4s ease;
   width: ${(props) => (props.$isFullWidth ? '100%' : 'auto')};
-  height: 4.8rem;
+  height: 40px;
+  text-align: center;
+
   cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
   filter: ${(props) => (props.disabled ? 'opacity(0.5)' : 'none')};
 
