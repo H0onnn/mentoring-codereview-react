@@ -17,7 +17,7 @@ export const getDetailExhibition = async ({ id }: { id: number }) => {
   await sleep({ ms: 500 });
 
   if (response === undefined) {
-    return new Error('존재하지 않는 전시회 입니다');
+    throw new Error('존재하지 않는 전시회 입니다');
   }
 
   return response;
