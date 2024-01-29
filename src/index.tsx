@@ -3,13 +3,24 @@ import ReactDOM from 'react-dom/client';
 import Router from './Router';
 import reportWebVitals from './reportWebVitals';
 import GlobalStyles from './styles/globalStyle';
+import ModalView from '@components/ui/Modal/ModalView';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
-  <React.StrictMode>
+  <QueryClientProvider client={queryClient}>
     <GlobalStyles />
     <Router />
-  </React.StrictMode>,
+    <ModalView />
+  </QueryClientProvider>,
 );
 
 // If you want to start measuring performance in your app, pass a function
